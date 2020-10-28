@@ -67,21 +67,28 @@ document.addEventListener('keydown', function(e){
 window.addEventListener('resize', function(e){ //make all <a> tags big font size
     const allAs = document.querySelectorAll('a') //here I've captured a nodeList of all a tags
     // console.log(allAs) //returning a nodeList as expected which allows .forEach() on it. This is proof above worked.
-
+console.log(e.target.innerWidth)
     allAs.forEach(function(thisATag){
-        thisATag.style.fontSize = "4rem"
+        thisATag.style.fontSize = `${e.target.innerWidth/50}px`
     })
 
     }
 )
 
-
 //9
     window.addEventListener('wheel', function(e){
-    // console.log(`the wheel moved at X:${e.clientX/2} and Y:${e.clientY}`)
-        const footer = document.querySelector('footer')
-        // console.log(footer)
+        console.log(`the wheel moved at X:${e.clientX} and Y:${e.clientY}`)
+        const footer = document.querySelector('footer p')
+            // console.log(footer)
+            //     const targetHTML = footer.innerHTML
+            // console.log(targetHTML)
         footer.style.fontSize = `${e.clientY}px`
+            // console.log(footer)
+
 })
+
+
+
+
 
 //10
